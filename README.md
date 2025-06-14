@@ -1,54 +1,55 @@
-# React + TypeScript + Vite
+# オセロゲーム
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React + TypeScript + Tailwind CSSで作成したシンプルなオセロゲームです。
 
-Currently, two official plugins are available:
+## 機能
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 8x8のオセロ盤
+- 黒と白の石を交互に配置
+- 有効な手の表示
+- スコア表示
+- パス機能
+- ゲーム終了判定
+- リスタート機能
 
-## Expanding the ESLint configuration
+## 技術スタック
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- React
+- TypeScript
+- Tailwind CSS
+- Vite
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 開発環境のセットアップ
+
+1. リポジトリをクローン
+```bash
+git clone [リポジトリのURL]
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+2. 依存関係のインストール
+```bash
+npm install
 ```
+
+3. 開発サーバーの起動
+```bash
+npm run dev
+```
+
+## 遊び方
+
+1. 黒が先手で開始
+2. 有効な手（半透明の黒い丸）が表示されている場所に石を置く
+3. 相手の石を挟んで裏返す
+4. 交互に手番を進める
+5. 有効な手がない場合はパス
+6. 両者とも有効な手がない場合、ゲーム終了
+7. 石の数が多い方が勝ち
+
+## ライセンス
+
+MIT
+
+## 作者
+
+[あなたの名前]
